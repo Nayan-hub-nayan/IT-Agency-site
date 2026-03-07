@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>YELENA | Agency Vision</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesque:wght@300;400;500;700&amp;family=Space+Mono:wght@400;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#FF007A", // Vibrant Magenta
+                        accent: "#D4FF00",  // Cyber Lime/Yellow
+                        "background-light": "#F8F9FA",
+                        "background-dark": "#0A0A0B",
+                    },
+                    fontFamily: {
+                        display: ["'Space Grotesque'", "sans-serif"],
+                        mono: ["'Space Mono'", "monospace"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "4px",
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        body {
+            background-color: #0A0A0B;
+            overflow-x: hidden;
+        }
+
+        .text-gradient {
+            background: linear-gradient(180deg, #FF007A 0%, #700036 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .outline-text {
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+            color: transparent;
+        }
+
+        .bg-mesh {
+            background-image: radial-gradient(circle at 80% 20%, rgba(255, 0, 122, 0.15), transparent 40%),
+                radial-gradient(circle at 20% 80%, rgba(212, 255, 0, 0.05), transparent 40%);
+        }
+
+        .custom-border {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .float-anim {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display antialiased">
+    <div class="relative min-h-screen w-full flex flex-col overflow-hidden bg-mesh">
+        <header class="p-8 flex justify-between items-start z-20">
+            <div class="font-mono text-xs opacity-60 dark:opacity-40 tracking-widest">
+                (N°004) <br />
+                EST. 2018
+            </div>
+            <div class="flex gap-4 items-center">
+                <div
+                    class="px-4 py-1.5 border border-white/20 rounded-full text-[10px] tracking-widest uppercase font-mono">
+                    About Us
+                </div>
+                <button
+                    class="w-10 h-10 flex items-center justify-center border border-white/20 rounded-full hover:bg-white hover:text-black transition-all">
+                    <span class="material-icons text-sm">menu</span>
+                </button>
+            </div>
+        </header>
+        <main class="flex-1 grid grid-cols-12 gap-6 px-8 relative z-10">
+            <div class="col-span-12 lg:col-span-4 flex flex-col justify-start pt-12">
+                <div
+                    class="bg-white/5 backdrop-blur-md p-8 rounded-[40px] border border-white/10 relative overflow-hidden group">
+                    <div class="absolute -top-10 -right-10 w-40 h-40 bg-primary/20 blur-3xl rounded-full"></div>
+                    <h1 class="text-5xl font-bold leading-tight mb-6">
+                        Design that <br />
+                        sparks <span class="text-accent">thought and emotion.</span>
+                    </h1>
+                    <p class="text-sm opacity-60 max-w-[280px] leading-relaxed mb-12">
+                        Visuals that connect, inspire, and engage. Because good design moves people.
+                    </p>
+                    <a class="w-16 h-16 rounded-full bg-accent flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+                        href="#">
+                        <span class="material-icons text-background-dark font-bold">arrow_forward</span>
+                    </a>
+                </div>
+                <div class="mt-20 font-mono text-[10px] tracking-widest leading-loose uppercase opacity-50">
+                    Freelance Designer<br />
+                    Crafting Digital Experiences<br />
+                    —From UI to Branding—With<br />
+                    Intent and Precision.
+                </div>
+            </div>
+            <div class="col-span-12 lg:col-span-8 flex flex-col justify-center relative">
+                <div
+                    class="absolute right-[-10%] top-[-10%] w-[120%] h-[120%] opacity-40 mix-blend-screen pointer-events-none">
+                    <img alt="Cyberpunk Aesthetic Portrait"
+                        class="w-full h-full object-cover filter grayscale brightness-50 contrast-125"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8Qxj5KQnhQewQqbqcURTA_lwezGCqsTa0vOUExD5skjM2epRFk1mqvcL0nP3Y8Ga3qxu66W5bEamJBQPk0uv8PmVQS_HAEu0AaBFEe9or03ozYWmlsPCKap72wG0rZkZZwDJ4yxuDHCC2h4Cmb8gg0nuknoGMTkZv3M18uL005TtDvgsTWKB-tYnNEXGsuVzk1P0JaMZmckPtF7f472Olut5A6TnBTewmHQ-Ji6OvxJCeYVQi9bqS5_AqI-VJKKUTEkbpwcr8lMlI" />
+                </div>
+                <div class="relative z-10 max-w-2xl ml-auto lg:mr-24">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="h-[2px] w-12 bg-accent"></div>
+                        <span class="font-mono text-accent text-lg">(032)</span>
+                    </div>
+                    <h2 class="text-6xl font-medium tracking-tight leading-none mb-10">
+                        I'm a designer who helps brands find - <span class="text-accent">clarity through smart, clean
+                            visuals.</span>
+                    </h2>
+                    <div class="grid grid-cols-2 gap-12 items-end">
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-4 border border-white/20 p-1 rounded-full w-fit pr-6">
+                                <span
+                                    class="bg-white/10 px-3 py-1 rounded-full font-mono text-[9px] uppercase tracking-tighter">Eluna</span>
+                                <span class="font-mono text-[9px] uppercase tracking-tighter opacity-60">Studio</span>
+                            </div>
+                            <p class="font-mono text-[9px] leading-relaxed opacity-60 uppercase tracking-widest">
+                                The project included homepage, service pages, portfolio showcase, and a custom blog
+                                layout—built with a user-first mindset and mobile optimization in focus.
+                            </p>
+                        </div>
+                        <div
+                            class="font-mono text-[9px] uppercase tracking-[0.2em] opacity-80 leading-relaxed text-right">
+                            My approach blends<br />
+                            creativity with clarity.<br />
+                            Good design should feel<br />
+                            good—and work even better.
+                        </div>
+                    </div>
+                    <div class="mt-16 flex items-end justify-between border-t border-white/10 pt-8">
+                        <div class="w-48 h-24 overflow-hidden relative border border-white/10 rounded-lg bg-black/40">
+                            <svg class="w-full h-full stroke-accent/40 fill-none opacity-50" viewBox="0 0 400 200">
+                                <path d="M0,100 C100,20 150,180 200,100 S300,180 400,100" stroke-width="0.5"></path>
+                                <path d="M0,110 C100,30 150,190 200,110 S300,190 400,110" stroke-width="0.5"></path>
+                                <path d="M0,120 C100,40 150,200 200,120 S300,200 400,120" stroke-width="0.5"></path>
+                                <path d="M0,90 C100,10 150,170 200,90 S300,170 400,90" stroke-width="0.5"></path>
+                            </svg>
+                        </div>
+                        <div class="text-right font-mono space-y-4">
+                            <div class="text-[10px] tracking-widest">40.7440°N 73.9873°W</div>
+                            <div class="flex justify-end gap-2">
+                                <span class="bg-white text-black px-2 py-0.5 text-[9px] font-bold">INA</span>
+                                <span class="border border-white/20 px-2 py-0.5 text-[9px]">UI/UX DESIGN</span>
+                            </div>
+                            <div class="flex flex-col items-end gap-1">
+                                <div
+                                    class="w-16 h-4 bg-[repeating-linear-gradient(90deg,white,white_1px,transparent_1px,transparent_3px)] opacity-50">
+                                </div>
+                                <div class="text-[8px] opacity-40">1696 4567</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="mt-auto px-8 pb-4 relative z-0">
+            <div class="flex items-end justify-between border-b border-white/10 pb-4">
+                <div class="flex gap-12 font-mono text-[10px] tracking-widest uppercase opacity-40">
+                    <span>// SINCE 2018</span>
+                    <span>// NEW YORK BASED</span>
+                </div>
+                <div class="text-right">
+                    <div class="text-accent text-2xl font-bold mb-1">クリエイティ<br />ブ・マインド</div>
+                    <div class="font-mono text-[10px] opacity-60 tracking-widest">40.7440°N 73.9873° W</div>
+                </div>
+            </div>
+            <div class="relative mt-4">
+                <h1
+                    class="text-[18vw] font-bold leading-[0.8] tracking-tighter text-gradient uppercase flex items-baseline">
+                    Yelena<span class="text-[4vw] ml-4 align-top">.</span>
+                </h1>
+                <span class="absolute top-0 right-0 font-mono text-accent text-2xl font-bold">TM</span>
+            </div>
+        </footer>
+        <div class="fixed top-8 right-8 z-50">
+            <svg class="text-primary float-anim" fill="none" height="40" viewBox="0 0 40 40" width="40"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 0L24.5 15.5L40 20L24.5 24.5L20 40L15.5 24.5L0 20L15.5 15.5L20 0Z" fill="currentColor">
+                </path>
+            </svg>
+        </div>
+    </div>
+
+</body>
+
+</html>
