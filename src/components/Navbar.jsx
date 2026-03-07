@@ -1,0 +1,99 @@
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navLinks = [
+    { name: '_Home', path: '/home' },
+    { name: '_About', path: '/about' },
+    { name: '_Services', path: '/services' },
+    { name: '_Projects', path: '/projects' },
+    { name: '_Team', path: '/team' },
+    { name: '_FAQ', path: '/faq' },
+  ];
+
+  return (
+    <header className={`fixed w-full top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-black/80 backdrop-blur-md py-4' : 'bg-transparent py-8'}`}>
+      <div className="max-w-7xl mx-auto px-8 flex justify-between items-center">
+        {/* Logo/Status Section */}
+        <div className="flex flex-col gap-1">
+          <Link to="/home" className="text-accent text-xl font-bold tracking-tighter uppercase flex items-center gap-2">
+            <span className="material-symbols-outlined text-2xl">dataset</span>
+            Lassgana
+          </Link>
+          <div className="font-mono text-[8px] opacity-40 tracking-widest uppercase hidden md:block">
+            (REF. DD_2024) // SYSTEM_STATUS: ACTIVE
+          </div>
+        </div>
+
+        {/* Desktop Nav */}
+        <nav className="hidden lg:flex items-center gap-10">
+          {navLinks.map((link) => (
+            <Link
+              key={link.path}
+              to={link.path}
+              className={`font-mono text-[10px] uppercase tracking-widest transition-colors hover:text-primary ${location.pathname === link.path ? 'text-primary' : 'text-white/60'
+                }`}
+            >
+              {link.name}
+            </Link>
+          ))}
+          <button className="px-6 py-2 border border-white/20 rounded-full text-[10px] tracking-widest uppercase font-mono bg-black/40 backdrop-blur-sm hover:bg-white hover:text-black transition-all">
+            USA / GLOBAL HQ
+          </button>
+        </nav>
+
+        {/* Mobile Toggle */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="lg:hidden w-10 h-10 flex items-center justify-center border border-white/20 rounded-full hover:bg-white hover:text-black transition-all"
+        >
+          <span className="material-symbols-outlined text-sm">{isOpen ? 'close' : 'menu'}</span>
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="absolute top-full left-0 w-full bg-black/95 backdrop-blur-xl border-b border-white/10 p-8 lg:hidden"
+          >
+            <div className="flex flex-col gap-6">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  onClick={() => setIsOpen(false)}
+                  className={`font-mono text-xs uppercase tracking-[0.2em] ${location.pathname === link.path ? 'text-primary' : 'text-white/60'
+                    }`}
+                >
+                  {link.name}
+                </Link>
+              ))}
+              <button className="w-full bg-primary text-white px-6 py-4 text-sm font-bold tracking-widest uppercase hover:bg-white hover:text-primary transition-all mt-4">
+                INITIATE_CONTACT
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </header>
+  );
+};
+
+export default Navbar;

@@ -1,0 +1,168 @@
+<html class="dark">
+
+<head>
+    <meta charset="utf-8" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f20da6",
+                        "background-light": "#f8f5f7",
+                        "background-dark": "#22101c",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .glitch-text {
+            text-shadow: 2px 0 #f20da6, -2px 0 #0bda87;
+        }
+
+        .grid-bg {
+            background-image: linear-gradient(to right, rgba(242, 13, 166, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(242, 13, 166, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .scanline {
+            background: linear-gradient(to bottom, transparent 50%, rgba(242, 13, 166, 0.02) 50%);
+            background-size: 100% 4px;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen overflow-x-hidden selection:bg-primary selection:text-white">
+    <!-- Background Layer -->
+    <div class="fixed inset-0 grid-bg pointer-events-none opacity-40"></div>
+    <div class="fixed inset-0 scanline pointer-events-none"></div>
+    <div class="relative flex flex-col min-h-screen">
+
+        <main
+            class="flex-1 flex flex-col lg:flex-row p-6 lg:p-12 gap-8 items-center justify-center max-w-7xl mx-auto w-full">
+            <!-- Left Column: The Glitch & Code -->
+            <div class="flex flex-col flex-1 w-full lg:w-1/2 space-y-8">
+                <div class="relative">
+                    <span class="absolute -top-10 -left-6 text-primary/10 text-9px font-mono">ERROR_CODE:
+                        0x00000194</span>
+                    <h1
+                        class="glitch-text text-[120px] lg:text-[180px] font-black leading-none tracking-tighter text-slate-100 opacity-90">
+                        404
+                    </h1>
+                    <div
+                        class="absolute top-1/2 -right-4 translate-x-1/2 bg-primary px-3 py-1 rotate-90 text-[10px] font-bold text-white tracking-widest">
+                        NODE_LOST
+                    </div>
+                </div>
+                <div class="space-y-4 border-l-2 border-primary pl-6">
+                    <h2 class="text-3xl lg:text-4xl font-bold uppercase tracking-tight">SYSTEM_ERROR: NODE_NOT_FOUND
+                    </h2>
+                    <p class="text-primary/70 text-lg font-mono">COORDINATES_LOST_IN_CYBERSPACE // SECTOR_UNKNOWN</p>
+                    <div
+                        class="bg-primary/5 p-4 rounded-lg border border-primary/10 font-mono text-xs text-primary/80 max-w-md">
+                        <p>&gt; TRACE_ROUTE... FAILED</p>
+                        <p>&gt; PING_SERVER... TIMEOUT</p>
+                        <p>&gt; RECOVERY_PROTOCOL... STANDBY</p>
+                        <p>&gt; The requested packet was intercepted or dissipated into the void.</p>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <button
+                        class="bg-primary hover:bg-primary/90 text-white font-bold py-4 px-8 rounded-full flex items-center gap-2 transition-all shadow-lg shadow-primary/20 group">
+                        <span
+                            class="material-symbols-outlined group-hover:rotate-180 transition-transform">refresh</span>
+                        REBOOT_TO_HOME
+                    </button>
+                    <button
+                        class="bg-primary/10 border border-primary/30 hover:bg-primary/20 text-primary font-bold py-4 px-8 rounded-full flex items-center gap-2 transition-all">
+                        <span class="material-symbols-outlined">explore</span>
+                        SCAN_SITE_MAP
+                    </button>
+                </div>
+            </div>
+            <!-- Right Column: Data Visualization -->
+            <div class="w-full lg:w-1/2 flex flex-col gap-6">
+                <!-- Visual Grid Interface -->
+                <div
+                    class="relative bg-background-dark border border-primary/20 rounded-xl overflow-hidden aspect-video group">
+                    <div class="absolute inset-0 opacity-30 bg-primary/10 mix-blend-overlay"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div
+                            class="relative w-64 h-64 border border-primary/20 rounded-full flex items-center justify-center">
+                            <div
+                                class="w-48 h-48 border border-primary/30 rounded-full border-dashed animate-spin [animation-duration:10s]">
+                            </div>
+                            <div class="absolute w-2 h-2 bg-primary rounded-full shadow-[0_0_15px_#f20da6]"></div>
+                            <span class="material-symbols-outlined text-primary text-6xl opacity-50">radar</span>
+                        </div>
+                    </div>
+                    <!-- Corner Accents -->
+                    <div class="absolute top-4 left-4 border-t-2 border-l-2 border-primary w-4 h-4"></div>
+                    <div class="absolute top-4 right-4 border-t-2 border-r-2 border-primary w-4 h-4"></div>
+                    <div class="absolute bottom-4 left-4 border-b-2 border-l-2 border-primary w-4 h-4"></div>
+                    <div class="absolute bottom-4 right-4 border-b-2 border-r-2 border-primary w-4 h-4"></div>
+                    <img class="w-full h-full object-cover opacity-20"
+                        data-alt="Technical HUD interface with diagnostic data and grid nodes"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBviqBc5rTB8MEoVypkmxMl3E8qd21NC14EYC6-CkwzeBq3olqisy_MAQkK2Wz3QvMhwjXWvYxv2v0Y2C8_LZex9Pq6RlUwuUuXIdt5JpBGjsmWUMkO03DZAXftvlG46pxbp2MVKJH3l2CO-vEIqnp3u1cbM5fl1It4wWkIPFFbR6nuFgChDEUZ5LJKEx7sIC8-qojTn-aMFoOmh1-XWOqplwIPgJ4k7MVDzxfykLDM9t1295pA46GIEYlwauZ95UiaWTH0O5Y9BXC5" />
+                </div>
+                <!-- Metric Cards Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div
+                        class="bg-primary/5 border border-primary/20 p-5 rounded-xl hover:bg-primary/10 transition-colors">
+                        <span class="text-[10px] text-primary/60 font-mono block mb-1">LATENCY</span>
+                        <div class="text-2xl font-bold tracking-tight">0.00ms</div>
+                        <div class="text-primary text-[10px] font-mono mt-2 flex items-center gap-1">
+                            <span class="material-symbols-outlined text-xs">trending_down</span>
+                            SIGNAL_NULL
+                        </div>
+                    </div>
+                    <div
+                        class="bg-primary/5 border border-primary/20 p-5 rounded-xl hover:bg-primary/10 transition-colors">
+                        <span class="text-[10px] text-primary/60 font-mono block mb-1">PACKET_LOSS</span>
+                        <div class="text-2xl font-bold tracking-tight">100%</div>
+                        <div class="text-red-500 text-[10px] font-mono mt-2 flex items-center gap-1">
+                            <span class="material-symbols-outlined text-xs">error</span>
+                            CRITICAL
+                        </div>
+                    </div>
+                    <div
+                        class="bg-primary/5 border border-primary/20 p-5 rounded-xl hover:bg-primary/10 transition-colors">
+                        <span class="text-[10px] text-primary/60 font-mono block mb-1">ENCRYPTION</span>
+                        <div class="text-2xl font-bold tracking-tight uppercase">AES-256</div>
+                        <div class="text-emerald-500 text-[10px] font-mono mt-2 flex items-center gap-1">
+                            <span class="material-symbols-outlined text-xs">lock</span>
+                            ACTIVE
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- Asymmetrical Bottom Info -->
+
+    </div>
+    <!-- Decorative Floaters -->
+    <div
+        class="fixed top-1/4 right-10 w-32 h-32 border border-primary/10 rounded-full animate-pulse pointer-events-none hidden xl:block">
+    </div>
+    <div
+        class="fixed bottom-1/4 left-10 w-64 h-64 border-l border-t border-primary/5 pointer-events-none hidden xl:block">
+    </div>
+</body>
+
+</html>

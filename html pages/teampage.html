@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Elite Squad | Future-Forward IT Agency</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Syne:wght@400;700;800&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#EFFF00", // Neon Yellow
+                        magenta: "#FF00FF", // Signature Magenta
+                        neonGreen: "#39FF14", // Pulsing Neon Green
+                        "background-dark": "#050505",
+                    },
+                    fontFamily: {
+                        display: ["Syne", "sans-serif"],
+                        body: ["Space Grotesk", "sans-serif"],
+                        mono: ["JetBrains Mono", "monospace"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0px",
+                    },
+                },
+            },
+        };
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-huge {
+                font-size: clamp(8rem, 20vw, 24rem);
+                line-height: 0.8;
+                letter-spacing: -0.05em;
+            }
+            .grid-lines {
+                background-image: linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
+                                  linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);
+                background-size: 80px 80px;
+            }
+            .scanline {
+                width: 100%;
+                height: 4px;
+                background: linear-gradient(to bottom, transparent, rgba(63, 255, 0, 0.1), transparent);
+                position: absolute;
+                left: 0;
+                z-index: 40;
+                animation: scanning 12s linear infinite;
+            }
+            @keyframes scanning {
+                0% { top: -10%; }
+                100% { top: 110%; }
+            }
+            @keyframes pulse-green {
+                0%, 100% { opacity: 1; transform: scale(1); }
+                50% { opacity: 0.5; transform: scale(1.2); }
+            }
+            .animate-pulse-green {
+                animation: pulse-green 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+            }
+            .small-caps {
+                font-variant: small-caps;
+            }
+            .noir-portrait {
+                filter: grayscale(100%) contrast(150%) brightness(60%);
+                mix-blend-mode: luminosity;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark text-white font-body overflow-x-hidden selection:bg-primary selection:text-black">
+    <div class="fixed inset-0 grid-lines pointer-events-none z-0"></div>
+    <div class="scanline pointer-events-none"></div>
+    <header
+        class="fixed w-full top-0 z-50 px-8 py-6 flex justify-between items-center bg-gradient-to-b from-black/80 to-transparent">
+        <div class="flex items-center gap-4">
+            <div
+                class="w-10 h-10 border-2 border-primary flex items-center justify-center font-display font-black text-primary italic">
+                E</div>
+            <span class="font-display font-bold tracking-tighter text-2xl uppercase">Elite.Squad</span>
+        </div>
+        <nav class="hidden md:flex gap-12 items-center text-[10px] font-mono uppercase tracking-[0.3em]">
+            <a class="hover:text-primary transition-colors border-b border-transparent hover:border-primary pb-1"
+                href="#">System</a>
+            <a class="text-primary border-b border-primary pb-1" href="#">Agents</a>
+            <a class="hover:text-primary transition-colors border-b border-transparent hover:border-primary pb-1"
+                href="#">Operations</a>
+            <button
+                class="bg-primary text-black px-6 py-2 font-bold hover:bg-white transition-all">Connect_Node</button>
+        </nav>
+    </header>
+    <main>
+        <section class="relative min-h-screen flex flex-col justify-center border-b border-white/5">
+            <div class="absolute top-20 right-20 font-mono text-[10px] text-white/20 text-right uppercase space-y-1">
+                <div>Lat: 40.7128° N</div>
+                <div>Long: 74.0060° W</div>
+                <div class="text-magenta/60">Data_Package: Alpha_7</div>
+            </div>
+            <div class="absolute inset-0 flex items-center justify-center z-0 overflow-hidden">
+                <img alt="Noir style portrait" class="noir-portrait w-full h-full object-cover scale-110"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvX-STNWN6tzRpPB3Zg_aXyq3PW5hr6XLPAHwVLAX5IhbIXjkrWP43Z-TRD5mu2PipC3OV5zUMoETFOFH1yYGdPVo-RoTywVWtw1WI1xelhM6VRSIMwA4Si__7fCH1BNi_yUDxhoY5LXHTHJNUqUzgLWhD8tupgHE9z4Dz7XxeYpLEcBEo2YNjSZgt7kyUNKBwVON13GYIJ-6ZnOyH-nHtwwHF6hzZ5-ETInYCj4CSmtqZKT7qnA8osOAxsjNbWaAd9hmPkjMQvBuo" />
+                <div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent">
+                </div>
+            </div>
+            <div class="relative z-10 pt-40 px-8 md:px-20 pointer-events-none">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-2 h-2 rounded-full bg-neonGreen animate-pulse-green shadow-[0_0_10px_#39FF14]"></div>
+                    <span class="font-mono text-[11px] text-neonGreen tracking-[0.2em] uppercase">Status: Online</span>
+                </div>
+                <h1 class="font-display text-huge font-black text-primary uppercase select-none">
+                    Yelena.
+                </h1>
+                <div class="mt-8 flex flex-col md:flex-row md:items-end justify-between gap-12 pointer-events-auto">
+                    <div class="space-y-4 max-w-xl">
+                        <div class="font-mono text-magenta text-sm tracking-[0.15em] font-bold small-caps">
+                            Specialization: Architecture // Node: 001 // Level: Core
+                        </div>
+                        <p class="text-white/70 text-lg leading-relaxed max-w-md">
+                            Mastermind behind hyper-logic systems and digital ecosystems. Defining the future of
+                            interaction through algorithmic precision.
+                        </p>
+                        <button
+                            class="group flex items-center gap-4 bg-transparent border border-magenta px-8 py-4 text-magenta font-mono text-xs tracking-widest hover:bg-magenta hover:text-white transition-all">
+                            VIEW RECENT WORK
+                            <span
+                                class="material-symbols-outlined text-sm group-hover:translate-x-2 transition-transform">arrow_forward_ios</span>
+                        </button>
+                    </div>
+                    <div class="hidden lg:block border-l border-white/10 pl-8 pb-4">
+                        <div class="font-mono text-[9px] text-white/30 space-y-2 uppercase tracking-widest">
+                            <div>// Signal Strength: 99%</div>
+                            <div>// Encryption: RSA-4096</div>
+                            <div>// Identity: Verified</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="relative min-h-screen flex flex-col justify-center border-b border-white/5">
+            <div class="absolute top-20 right-20 font-mono text-[10px] text-white/20 text-right uppercase space-y-1">
+                <div>Lat: 35.6762° N</div>
+                <div>Long: 139.6503° E</div>
+                <div class="text-magenta/60">Data_Package: Sigma_2</div>
+            </div>
+            <div class="absolute inset-0 flex items-center justify-center z-0 overflow-hidden">
+                <img alt="Noir style portrait" class="noir-portrait w-full h-full object-cover scale-110"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7Gjxo06ov4EtyhtbaSo1ldyLBVJLgcJ5iXuQIodn-kBMgWFOlo9MoudRoATHb-xKSLD-kGrbEgknHAfeBjPfWJyEmJG6Sm1_7tD-o02CV4KlCqYwfp6O8XwsoQ4RkdnjGneYRAkzpTXXoPpYVsf4IqHv5SifMiyT9AJTtdtOhmblDeyUQL7Qb0SWRmJwPbqSWMk-R2KBAdXDUXgXLuhBgXbXBQRW_rxqGRYeS45bUKWb9VdXAjEeNjjJ4BX7gjz1YXJfehV16CfMZ" />
+                <div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent">
+                </div>
+            </div>
+            <div class="relative z-10 pt-40 px-8 md:px-20 pointer-events-none">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-2 h-2 rounded-full bg-neonGreen animate-pulse-green shadow-[0_0_10px_#39FF14]"></div>
+                    <span class="font-mono text-[11px] text-neonGreen tracking-[0.2em] uppercase">Status: Online</span>
+                </div>
+                <h1 class="font-display text-huge font-black text-white uppercase select-none">
+                    Marcus.
+                </h1>
+                <div class="mt-8 flex flex-col md:flex-row md:items-end justify-between gap-12 pointer-events-auto">
+                    <div class="space-y-4 max-w-xl">
+                        <div class="font-mono text-magenta text-sm tracking-[0.15em] font-bold small-caps">
+                            Specialization: Engineering // Node: 082 // Level: Elite
+                        </div>
+                        <p class="text-white/70 text-lg leading-relaxed max-w-md">
+                            Deploying scalable neural infrastructures and high-frequency trading protocols with zero
+                            latency tolerance.
+                        </p>
+                        <button
+                            class="group flex items-center gap-4 bg-transparent border border-magenta px-8 py-4 text-magenta font-mono text-xs tracking-widest hover:bg-magenta hover:text-white transition-all">
+                            VIEW RECENT WORK
+                            <span
+                                class="material-symbols-outlined text-sm group-hover:translate-x-2 transition-transform">arrow_forward_ios</span>
+                        </button>
+                    </div>
+                    <div class="hidden lg:block border-l border-white/10 pl-8 pb-4">
+                        <div class="font-mono text-[9px] text-white/30 space-y-2 uppercase tracking-widest">
+                            <div>// Uptime: 99.999%</div>
+                            <div>// Backend: Rust/Go</div>
+                            <div>// Security: Max</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="relative py-40 flex flex-col items-center justify-center text-center px-6">
+            <div class="absolute inset-0 pointer-events-none overflow-hidden flex items-center justify-center">
+                <div class="text-[30vw] font-display font-black text-white/[0.02] uppercase leading-none select-none">
+                    RECRUIT</div>
+            </div>
+            <div class="relative z-10">
+                <span
+                    class="font-mono text-magenta text-xs tracking-[0.5em] uppercase mb-8 block font-bold">Infiltration
+                    Protocol</span>
+                <h2
+                    class="font-display text-7xl md:text-9xl font-black text-primary mb-12 tracking-tighter uppercase italic">
+                    Join the Elite</h2>
+                <p
+                    class="font-mono text-white/40 max-w-xl mx-auto mb-12 uppercase text-[10px] tracking-widest leading-loose">
+                    We are looking for agents with exceptional logical processing and creative divergence capacities.
+                </p>
+                <a class="inline-flex items-center gap-8 group" href="#">
+                    <span
+                        class="font-mono text-2xl text-white uppercase group-hover:text-primary transition-colors tracking-tighter">Submit
+                        Credentials</span>
+                    <div
+                        class="w-20 h-20 border-2 border-primary flex items-center justify-center group-hover:bg-primary transition-all">
+                        <span
+                            class="material-symbols-outlined text-primary group-hover:text-black text-4xl">north_east</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <div class="fixed left-6 md:left-12 top-0 h-full w-[1px] bg-white/5 pointer-events-none z-10"></div>
+    <div class="fixed right-6 md:right-12 top-0 h-full w-[1px] bg-white/5 pointer-events-none z-10"></div>
+
+</body>
+
+</html>
