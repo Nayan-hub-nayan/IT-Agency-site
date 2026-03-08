@@ -12,19 +12,21 @@ import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
 import Hero from './components/Hero';
 import ScrollToTop from './components/ScrollToTop';
+import { MenuProvider } from './context/MenuContext';
 
 function App() {
   return (
     <Router>
-      <ScrollToTop />
-      <div className="min-h-screen bg-background-dark text-slate-100 flex flex-col">
-        <Routes>
-          <Route path="/" element={<Hero />} />
-          <Route
-            path="*"
-            element={
-              <>
-                <Navbar />
+      <MenuProvider>
+        <ScrollToTop />
+        <div className="min-h-screen bg-background-dark text-slate-100 flex flex-col">
+          <Navbar />
+
+          <Routes>
+            <Route path="/" element={<Hero />} />
+            <Route
+              path="*"
+              element={
                 <main className="flex-grow">
                   <Routes>
                     <Route path="/home" element={<Home />} />
@@ -37,12 +39,12 @@ function App() {
                     <Route path="*" element={<NotFound />} />
                   </Routes>
                 </main>
-                <Footer />
-              </>
-            }
-          />
-        </Routes>
-      </div>
+              }
+            />
+          </Routes>
+          <Footer />
+        </div>
+      </MenuProvider>
     </Router>
   );
 }

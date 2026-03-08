@@ -20,7 +20,9 @@ const AboutPage = () => {
         <CoreValues />
         <GlobalReach />
         <TeamSection />
+
       </main>
+
     </div>
   );
 };

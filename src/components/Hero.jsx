@@ -1,46 +1,51 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useMenu } from '../context/MenuContext';
 
 const Hero = () => {
     const navigate = useNavigate();
+    const { toggleMenu } = useMenu();
 
     return (
         <div className="relative min-h-screen w-full flex flex-col overflow-hidden bg-background-dark bg-mesh font-display antialiased text-white">
             {/* Left Arrow Navigation Trigger */}
 
-
-            <header className="p-8 flex justify-between items-start z-20">
-                <motion.div 
-                    initial={{ y: -50, opacity: 0 }}
-                    animate={{ y: 0, opacity: 0.6 }}
-                    transition={{ duration: 1, ease: "easeOut" }}
-                    className="font-mono text-xs opacity-60 dark:opacity-40 tracking-widest"
-                >
-                    (N°004) <br />
-                    EST. 2018
-                </motion.div>
-                <motion.div 
-                    initial={{ y: -50, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-                    className="flex gap-4 items-center"
-                >
-                    <div
-                        onClick={() => navigate('/about')}
-                        className="px-4 py-1.5 border border-white/20 rounded-full text-[10px] tracking-widest uppercase font-mono cursor-pointer hover:bg-white/10"
+            {/*
+                <header className="p-8 flex justify-between items-start z-20">
+                    <motion.div
+                        initial={{ y: -50, opacity: 0 }}
+                        animate={{ y: 0, opacity: 0.6 }}
+                        transition={{ duration: 1, ease: "easeOut" }}
+                        className="font-mono text-xs opacity-60 dark:opacity-40 tracking-widest"
                     >
-                        About Us
-                    </div>
-                    <button className="w-10 h-10 flex items-center justify-center border border-white/20 rounded-full hover:bg-white hover:text-black transition-all">
-                        <span className="material-icons text-sm">menu</span>
-                    </button>
-                </motion.div>
-            </header>
-
+                        (N°004) <br />
+                        EST. 2018
+                    </motion.div>
+                    <motion.div
+                        initial={{ y: -50, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+                        className="flex gap-4 items-center"
+                    >
+                        <div
+                            onClick={() => navigate('/about')}
+                            className="px-4 py-1.5 border border-white/20 rounded-full text-[10px] tracking-widest uppercase font-mono cursor-pointer hover:bg-white/10"
+                        >
+                            About Us
+                        </div>
+                        <button
+                            onClick={toggleMenu}
+                            className="w-10 h-10 flex items-center justify-center border border-white/20 rounded-full hover:bg-white hover:text-black transition-all"
+                        >
+                            <span className="material-icons text-sm">menu</span>
+                        </button>
+                    </motion.div>
+                </header>
+            */}
 
             <main className="flex-1 grid grid-cols-12 gap-6 px-8 relative z-10">
-                <motion.div 
+                <motion.div
                     initial={{ opacity: 0, x: -30 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
@@ -59,7 +64,7 @@ const Hero = () => {
                             <span className="material-icons material-symbols-outlined text-background-dark font-bold text-black">arrow_forward</span>
                         </a>
                     </div>
-                    <motion.div 
+                    <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 0.5 }}
                         transition={{ delay: 0.5, duration: 1 }}
@@ -73,7 +78,7 @@ const Hero = () => {
                 </motion.div>
 
                 <div className="col-span-12 lg:col-span-8 flex flex-col justify-center relative">
-                    <motion.div 
+                    <motion.div
                         initial={{ opacity: 0, scale: 1.1 }}
                         animate={{ opacity: 0.4, scale: 1 }}
                         transition={{ duration: 1.5, ease: "easeOut" }}
@@ -85,7 +90,7 @@ const Hero = () => {
                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8Qxj5KQnhQewQqbqcURTA_lwezGCqsTa0vOUExD5skjM2epRFk1mqvcL0nP3Y8Ga3qxu66W5bEamJBQPk0uv8PmVQS_HAEu0AaBFEe9or03ozYWmlsPCKap72wG0rZkZZwDJ4yxuDHCC2h4Cmb8gg0nuknoGMTkZv3M18uL005TtDvgsTWKB-tYnNEXGsuVzk1P0JaMZmckPtF7f472Olut5A6TnBTewmHQ-Ji6OvxJCeYVQi9bqS5_AqI-VJKKUTEkbpwcr8lMlI"
                         />
                     </motion.div>
-                    <motion.div 
+                    <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -140,7 +145,7 @@ const Hero = () => {
                 </div>
             </main>
 
-            <motion.footer 
+            <motion.footer
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
@@ -164,11 +169,6 @@ const Hero = () => {
                 </div>
             </motion.footer>
 
-            <div className="fixed top-8 right-8 z-50">
-                <svg className="text-primary float-anim" fill="none" height="40" viewBox="0 0 40 40" width="40" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M20 0L24.5 15.5L40 20L24.5 24.5L20 40L15.5 24.5L0 20L15.5 15.5L20 0Z" fill="currentColor"></path>
-                </svg>
-            </div>
         </div>
     );
 };

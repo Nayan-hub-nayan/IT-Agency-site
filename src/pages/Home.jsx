@@ -14,10 +14,8 @@ const Home = () => {
       <section className="min-h-screen pt-32 px-8 flex flex-col justify-center bg-background-dark">
         <div className="max-w-7xl mx-auto grid grid-cols-12 gap-8 items-center w-full">
           <motion.div
-            initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, ease: "easeOut" }}
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
             className="col-span-12 lg:col-span-4"
           >
             <h1 className="text-6xl font-black leading-[0.9] mb-8 uppercase tracking-tighter">
@@ -37,13 +35,11 @@ const Home = () => {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 100, scale: 0.95 }}
-            whileInView={{ opacity: 1, x: 0, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
             className="col-span-12 lg:col-span-8 relative"
           >
-            <div className="absolute right-[-10%] top-[-5%] w-[110%] h-[110%] opacity-30 mix-blend-lighten pointer-events-none">
+            <div className="absolute right-[-10%] top-[-10%] w-[110%] h-[230%] opacity-30 mix-blend-lighten pointer-events-none">
               <img
                 alt="Portrait"
                 className="w-full h-full object-cover filter grayscale contrast-150"
@@ -59,18 +55,12 @@ const Home = () => {
         </div>
 
         {/* Hero Footer Info */}
-        <motion.div 
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 0.4, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.5 }}
-          className="max-w-7xl mx-auto w-full mt-20 font-mono text-[10px] tracking-widest leading-loose uppercase opacity-40"
-        >
+        <div className="max-w-7xl mx-auto w-full mt-20 font-mono text-[10px] tracking-widest leading-loose uppercase opacity-40">
           40.7128° N, 74.0060° W<br />
           NEW YORK CITY TERMINAL<br />
           ENCRYPTED DATA STREAM<br />
           V_0.1.42
-        </motion.div>
+        </div>
       </section>
 
       {/* Live Feed Section */}
@@ -113,10 +103,8 @@ const Home = () => {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 100 }}
+            initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, ease: "easeOut" }}
             className="order-1 lg:order-2 space-y-8"
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 border border-neon-green/30 rounded-full">
@@ -132,10 +120,8 @@ const Home = () => {
             <div className="grid grid-cols-2 gap-8 pt-8 border-t border-white/5">
               <div>
                 <motion.div
-                  initial={{ opacity: 0, scale: 0.5 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8, ease: "backOut" }}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
                   className="text-4xl font-black text-neon-green tracking-tighter"
                 >
                   99.9%
@@ -144,10 +130,8 @@ const Home = () => {
               </div>
               <div>
                 <motion.div
-                  initial={{ opacity: 0, scale: 0.5 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8, delay: 0.2, ease: "backOut" }}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
                   className="text-4xl font-black text-neon-green tracking-tighter"
                 >
                   12ms

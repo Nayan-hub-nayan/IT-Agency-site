@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useMenu } from '../context/MenuContext';
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const { isMenuOpen: isOpen, setIsOpen, toggleMenu, closeMenu } = useMenu();
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
@@ -52,7 +53,7 @@ const Navbar = () => {
           ))}
 
           <Link to="/contact">
-            <motion.button 
+            <motion.button
               whileHover={{ scale: 1.05, backgroundColor: 'var(--accent)', color: 'white' }}
               className="px-6 py-1.5 border border-white/20 text-[10px] font-mono uppercase tracking-widest font-black transition-colors rounded-full"
             >
@@ -64,7 +65,7 @@ const Navbar = () => {
 
         {/* Mobile Toggle */}
         <button
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={toggleMenu}
           className="lg:hidden w-10 h-10 flex items-center justify-center border border-white/20 rounded-full hover:bg-white hover:text-black transition-all"
         >
           <span className="material-symbols-outlined text-sm">{isOpen ? 'close' : 'menu'}</span>
@@ -78,14 +79,14 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 w-full bg-black/95 backdrop-blur-xl border-b border-white/10 p-8 lg:hidden"
+            className="absolute top-full left-0 w-full bg-black/95 backdrop-blur-xl border-b border-white/10 p-8"
           >
             <div className="flex flex-col gap-6">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
-                  onClick={() => setIsOpen(false)}
+                  onClick={closeMenu}
                   className={`font-mono text-xs uppercase tracking-[0.2em] ${location.pathname === link.path ? 'text-primary' : 'text-white/60'
                     }`}
                 >
