@@ -52,7 +52,7 @@ const Services = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background-dark pb-32">
+    <div className="min-h-screen bg-background-dark pb-32 pt-32">
       <ServiceHero />
       <div className="flex flex-col">
         {departments.map((dept) => (

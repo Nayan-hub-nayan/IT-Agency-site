@@ -50,9 +50,16 @@ const Navbar = () => {
               {link.name}
             </Link>
           ))}
-          <button className="px-6 py-2 border border-white/20 rounded-full text-[10px] tracking-widest uppercase font-mono bg-black/40 backdrop-blur-sm hover:bg-white hover:text-black transition-all">
-            USA / GLOBAL HQ
-          </button>
+
+          <Link to="/contact">
+            <motion.button 
+              whileHover={{ scale: 1.05, backgroundColor: 'var(--accent)', color: 'white' }}
+              className="px-6 py-1.5 border border-white/20 text-[10px] font-mono uppercase tracking-widest font-black transition-colors rounded-full"
+            >
+              Connect Node
+            </motion.button>
+          </Link>
+
         </nav>
 
         {/* Mobile Toggle */}

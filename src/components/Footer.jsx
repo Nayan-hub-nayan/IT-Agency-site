@@ -1,7 +1,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
+  const navLinks = [
+    { name: '_HOME', path: '/home' },
+    { name: '_SERVICES', path: '/services' },
+    { name: '_PROJECTS', path: '/projects' },
+    { name: '_TEAM', path: '/team' },
+    { name: '_FAQ', path: '/faq' },
+    { name: '_CONTACT', path: '/contact' },
+  ];
   return (
     <footer className="pt-32 pb-8 px-8 border-t border-white/10 relative overflow-hidden bg-background-dark">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-16 mb-24 relative z-10">
@@ -39,23 +48,32 @@ const Footer = () => {
               40.7128° N, 74.0060° W
             </div>
           </div>
+          <div className="flex gap-4">
+            {[['TW', '/home'], ['LN', '/service'], ['IG', '/team']].map(social => (
+              <Link to={social[1]} key={social} className="w-8 h-8 border border-white/10 flex items-center justify-center font-mono text-[10px] hover:bg-white hover:text-black transition-all cursor-pointer">
+                {social[0]}
+              </Link>
+            ))}
+          </div>
         </div>
 
+
         <div className="space-y-8">
-          <h4 className="font-mono text-[10px] opacity-40 uppercase tracking-[0.4em]">Security_Protocol</h4>
+
+          <span className="text-slate-500 text-[10px] font-mono font-black tracking-[0.5em] uppercase">NAVIGATION</span>
           <div className="space-y-6">
-            <div className="p-4 border border-white/10 bg-white/5 font-mono text-[9px] uppercase tracking-widest opacity-40">
-              // ENCRYPTION: AES_256<br />
-              // UPLINK: STABLE<br />
-              // LATENCY: 12ms
-            </div>
-            <div className="flex gap-4">
-              {['TW', 'LN', 'IG'].map(social => (
-                <div key={social} className="w-8 h-8 border border-white/10 flex items-center justify-center font-mono text-[10px] hover:bg-white hover:text-black transition-all cursor-pointer">
-                  {social}
-                </div>
+            <nav className="flex flex-col gap-6">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className="text-white font-black text-sm tracking-[0.2em] hover:text-primary transition-colors w-fit uppercase"
+                >
+                  {link.name}
+                </Link>
               ))}
-            </div>
+            </nav>
+
           </div>
         </div>
       </div>

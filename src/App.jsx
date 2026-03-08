@@ -11,10 +11,12 @@ import FAQ from './pages/FAQ';
 import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
 import Hero from './components/Hero';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="min-h-screen bg-background-dark text-slate-100 flex flex-col">
         <Routes>
           <Route path="/" element={<Hero />} />

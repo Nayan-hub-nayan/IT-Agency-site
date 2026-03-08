@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const Hero = () => {
     const navigate = useNavigate();
@@ -10,11 +11,21 @@ const Hero = () => {
 
 
             <header className="p-8 flex justify-between items-start z-20">
-                <div className="font-mono text-xs opacity-60 dark:opacity-40 tracking-widest">
+                <motion.div 
+                    initial={{ y: -50, opacity: 0 }}
+                    animate={{ y: 0, opacity: 0.6 }}
+                    transition={{ duration: 1, ease: "easeOut" }}
+                    className="font-mono text-xs opacity-60 dark:opacity-40 tracking-widest"
+                >
                     (N°004) <br />
                     EST. 2018
-                </div>
-                <div className="flex gap-4 items-center">
+                </motion.div>
+                <motion.div 
+                    initial={{ y: -50, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+                    className="flex gap-4 items-center"
+                >
                     <div
                         onClick={() => navigate('/about')}
                         className="px-4 py-1.5 border border-white/20 rounded-full text-[10px] tracking-widest uppercase font-mono cursor-pointer hover:bg-white/10"
@@ -24,12 +35,17 @@ const Hero = () => {
                     <button className="w-10 h-10 flex items-center justify-center border border-white/20 rounded-full hover:bg-white hover:text-black transition-all">
                         <span className="material-icons text-sm">menu</span>
                     </button>
-                </div>
+                </motion.div>
             </header>
 
 
             <main className="flex-1 grid grid-cols-12 gap-6 px-8 relative z-10">
-                <div className="col-span-12 lg:col-span-4 flex flex-col justify-start pt-12">
+                <motion.div 
+                    initial={{ opacity: 0, x: -30 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    className="col-span-12 lg:col-span-4 flex flex-col justify-start pt-12"
+                >
                     <div className="bg-white/5 backdrop-blur-md p-8 rounded-[40px] border border-white/10 relative overflow-hidden group">
                         <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary/20 blur-3xl rounded-full"></div>
                         <h1 className="text-5xl font-bold leading-tight mb-6">
@@ -43,23 +59,38 @@ const Hero = () => {
                             <span className="material-icons material-symbols-outlined text-background-dark font-bold text-black">arrow_forward</span>
                         </a>
                     </div>
-                    <div className="mt-20 font-mono text-[10px] tracking-widest leading-loose uppercase opacity-50">
+                    <motion.div 
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 0.5 }}
+                        transition={{ delay: 0.5, duration: 1 }}
+                        className="mt-20 font-mono text-[10px] tracking-widest leading-loose uppercase"
+                    >
                         Freelance Designer<br />
                         Crafting Digital Experiences<br />
                         —From UI to Branding—With<br />
                         Intent and Precision.
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
 
                 <div className="col-span-12 lg:col-span-8 flex flex-col justify-center relative">
-                    <div className="absolute right-[-10%] top-[-10%] w-[120%] h-[120%] opacity-40 mix-blend-screen pointer-events-none">
+                    <motion.div 
+                        initial={{ opacity: 0, scale: 1.1 }}
+                        animate={{ opacity: 0.4, scale: 1 }}
+                        transition={{ duration: 1.5, ease: "easeOut" }}
+                        className="absolute right-[-10%] top-[-10%] w-[120%] h-[120%] opacity-40 mix-blend-screen pointer-events-none"
+                    >
                         <img
                             alt="Cyberpunk Aesthetic Portrait"
                             className="w-full h-full object-cover filter grayscale brightness-50 contrast-125"
                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8Qxj5KQnhQewQqbqcURTA_lwezGCqsTa0vOUExD5skjM2epRFk1mqvcL0nP3Y8Ga3qxu66W5bEamJBQPk0uv8PmVQS_HAEu0AaBFEe9or03ozYWmlsPCKap72wG0rZkZZwDJ4yxuDHCC2h4Cmb8gg0nuknoGMTkZv3M18uL005TtDvgsTWKB-tYnNEXGsuVzk1P0JaMZmckPtF7f472Olut5A6TnBTewmHQ-Ji6OvxJCeYVQi9bqS5_AqI-VJKKUTEkbpwcr8lMlI"
                         />
-                    </div>
-                    <div className="relative z-10 max-w-2xl ml-auto lg:mr-24">
+                    </motion.div>
+                    <motion.div 
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+                        className="relative z-10 max-w-2xl ml-auto lg:mr-24"
+                    >
                         <div className="flex items-center gap-4 mb-8">
                             <div className="h-[2px] w-12 bg-accent"></div>
                             <span className="font-mono text-accent text-lg">(032)</span>
@@ -105,11 +136,16 @@ const Hero = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </main>
 
-            <footer className="mt-auto px-8 pb-4 relative z-0">
+            <motion.footer 
+                initial={{ y: 50, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
+                className="mt-auto px-8 pb-4 relative z-0"
+            >
                 <div className="flex items-end justify-between border-b border-white/10 pb-4">
                     <div className="flex gap-12 font-mono text-[10px] tracking-widest uppercase opacity-40">
                         <span>// SINCE 2018</span>
@@ -126,7 +162,7 @@ const Hero = () => {
                     </h1>
                     <span className="absolute top-0 right-0 font-mono text-accent text-2xl font-bold">TM</span>
                 </div>
-            </footer>
+            </motion.footer>
 
             <div className="fixed top-8 right-8 z-50">
                 <svg className="text-primary float-anim" fill="none" height="40" viewBox="0 0 40 40" width="40" xmlns="http://www.w3.org/2000/svg">
