@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f425af",
+                        "accent-green": "#39ff14",
+                        "background-light": "#f8f5f7",
+                        "background-dark": "#0f050c",
+                        "card-bg": "rgba(34, 16, 28, 0.6)",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "monospace"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .glass-panel {
+            background: rgba(244, 37, 175, 0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(244, 37, 175, 0.2);
+        }
+
+        .neon-glow {
+            box-shadow: 0 0 15px rgba(244, 37, 175, 0.4);
+        }
+
+        .grid-bg {
+            background-image: linear-gradient(rgba(244, 37, 175, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(244, 37, 175, 0.1) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen grid-bg">
+    <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+
+            <main class="flex-1 flex flex-col items-center">
+                <section class="w-full max-w-7xl px-6 pt-20 pb-10 text-center">
+                    <div class="inline-block px-3 py-1 mb-6 border border-primary/40 bg-primary/5 rounded-full">
+                        <span class="text-[10px] font-bold tracking-[0.3em] uppercase text-primary">Case Study //
+                            2024</span>
+                    </div>
+                    <h1 class="text-6xl md:text-9xl font-black tracking-tighter text-white uppercase leading-none">
+                        NEURAL<br /><span class="text-primary italic">INTERFACE_X</span>
+                    </h1>
+                    <p class="mt-8 text-slate-400 max-w-2xl mx-auto font-light text-lg">
+                        A decentralized visualization engine for real-time biometric data processing across distributed
+                        edge networks.
+                    </p>
+                </section>
+                <section class="w-full max-w-7xl px-6 py-20 relative">
+                    <div class="flex flex-col lg:flex-row items-end justify-center gap-8 relative z-10">
+                        <div
+                            class="hidden lg:block w-72 h-[480px] rounded-[2rem] border-8 border-slate-800 bg-slate-900 glass-panel neon-glow relative overflow-hidden transform -rotate-6">
+                            <div class="w-full h-full bg-cover bg-center"
+                                data-alt="Futuristic mobile UI with neon charts"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBPBhbfz_xYtWXKshFq5ESFKyy-ZGPHkFWdgG3lMQi3qFRJT2aUlUUgiqcmjcHFRgSfYvKegBOWkydTX06pS5PZxfaop2Dtp4p25Fr5omPDWcSCWnJxd5T7eixOkYesbWFUsAybcTb5v1mkZdxTfwusrDpcRkJng4yR0iJ5hdVEgUSkFCNabTxyK6kqcIeAywBCakD3bFMqygmDRH2sZ2U7HV_QiUWP7p1MLpoeHhCKWUGQv7aigFsCD82HwToi4yswJon_mYfsScdq')">
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent pointer-events-none">
+                            </div>
+                        </div>
+                        <div
+                            class="w-full max-w-4xl h-[500px] rounded-xl border-[12px] border-slate-800 bg-slate-900 glass-panel neon-glow relative overflow-hidden z-20 shadow-2xl">
+                            <div class="absolute top-0 left-0 right-0 h-8 bg-slate-800 flex items-center px-4 gap-2">
+                                <div class="size-2 rounded-full bg-red-500"></div>
+                                <div class="size-2 rounded-full bg-yellow-500"></div>
+                                <div class="size-2 rounded-full bg-green-500"></div>
+                            </div>
+                            <div class="w-full h-full pt-8 bg-cover bg-center"
+                                data-alt="Desktop dashboard showing complex network nodes"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBNDTnRaYwtMHlPHzs9TJlBbbr2_EH3fqEA1IokwcF9Q_XiXdLtQrl7XHgTC1pZTjUo_-64Xg3KRegPiCF-n6WQMTJd9mCG36TDFDc4ZU2CvojmuoXJFKsmGkEkKJ9-1k7U0oRSXs0MAAGYiiVyBX794u14GbD2tkT95u9bipgHbOr-APhG3cYbtRM2Aptkasfc6iN81m3RNLltLj89xFtCeoeVuIUyPaeghffr_W6jsAUJohuTWx17qO7L8c4jJKP_k1FjcW6YK-rD')">
+                            </div>
+                        </div>
+                        <div
+                            class="hidden lg:block w-96 h-[420px] rounded-2xl border-[10px] border-slate-800 bg-slate-900 glass-panel neon-glow relative overflow-hidden transform rotate-3 -translate-x-12">
+                            <div class="w-full h-full bg-cover bg-center"
+                                data-alt="Tablet interface with dark mode data visualization"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCna8dQakiM4NeoWSaORey5QCaCwyCk9akrzFZX56-yf7yN4yGlYbvUcAe8imZYUFhk5VkcJY1pH-UmddMUCy2CkeFP37DbYUrtKscAom16uUpK8s5ZUuxkeb1adYjJ3b1IUae3MJYiaQQbv-s3wdsLSbvviYi1XB3w_NqCMTS11RlaX8kheJfbCeWyhJMZJ5JX74l0dZHeLvzkTyPG3DsgIJNY3PnzROofb_pTyAawzLaKULpmS43lnVW2nYJE7Cn0m00livycv--p')">
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-primary/5 blur-[120px] -z-10 rounded-full">
+                    </div>
+                </section>
+                <section
+                    class="w-full max-w-7xl px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-primary/20">
+                    <div class="md:col-span-2">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="material-symbols-outlined text-primary">analytics</span>
+                            <h3 class="text-xl font-bold uppercase tracking-widest italic">Mission_Data</h3>
+                        </div>
+                        <p class="text-slate-400 leading-relaxed mb-8 text-lg">
+                            We architected a high-fidelity visualization platform capable of rendering 1.2M concurrent
+                            data points with sub-10ms latency. The solution utilizes a custom WebGL engine wrapped in a
+                            decentralized node architecture to ensure maximum uptime and security for high-stakes
+                            biometric monitoring.
+                        </p>
+                        <div class="flex flex-wrap gap-3">
+                            <span
+                                class="px-3 py-1 bg-slate-800 border border-primary/30 rounded text-[10px] font-bold text-primary uppercase">React_v18</span>
+                            <span
+                                class="px-3 py-1 bg-slate-800 border border-primary/30 rounded text-[10px] font-bold text-primary uppercase">Three.js</span>
+                            <span
+                                class="px-3 py-1 bg-slate-800 border border-primary/30 rounded text-[10px] font-bold text-primary uppercase">Rust_WASM</span>
+                            <span
+                                class="px-3 py-1 bg-slate-800 border border-primary/30 rounded text-[10px] font-bold text-primary uppercase">GraphQL_Nodes</span>
+                            <span
+                                class="px-3 py-1 bg-slate-800 border border-primary/30 rounded text-[10px] font-bold text-primary uppercase">Tailwind_Engines</span>
+                        </div>
+                    </div>
+                    <div class="glass-panel p-6 rounded-xl border-accent-green/20">
+                        <div class="flex items-center gap-2 mb-6">
+                            <span class="material-symbols-outlined text-accent-green">hub</span>
+                            <h3 class="text-xl font-bold uppercase tracking-widest italic">Interaction_Hub</h3>
+                        </div>
+                        <div class="space-y-6">
+                            <div class="flex justify-between items-center border-b border-white/5 pb-4">
+                                <span
+                                    class="text-xs font-bold text-slate-500 uppercase tracking-tighter">Engagement_Level</span>
+                                <span class="text-xl font-mono text-accent-green">88%</span>
+                            </div>
+                            <div class="flex justify-around py-4">
+                                <div class="text-center">
+                                    <div class="material-symbols-outlined text-primary mb-1">favorite</div>
+                                    <div class="text-lg font-bold">12.4k</div>
+                                    <div class="text-[10px] text-slate-500 uppercase">Likes</div>
+                                </div>
+                                <div class="w-px h-10 bg-white/10"></div>
+                                <div class="text-center">
+                                    <div class="material-symbols-outlined text-accent-green mb-1">share</div>
+                                    <div class="text-lg font-bold">3.2k</div>
+                                    <div class="text-[10px] text-slate-500 uppercase">Shares</div>
+                                </div>
+                            </div>
+                            <button
+                                class="w-full py-3 bg-accent-green/10 border border-accent-green/40 text-accent-green font-bold text-xs uppercase tracking-[0.2em] rounded hover:bg-accent-green hover:text-black transition-all">
+                                Download_Report
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                <section class="w-full max-w-7xl px-6 py-12 border-t border-primary/20">
+                    <div class="flex items-center gap-2 mb-10">
+                        <span class="material-symbols-outlined text-primary">lock</span>
+                        <h3 class="text-xl font-bold uppercase tracking-widest italic">[ Protected_Repository ]</h3>
+                    </div>
+                    <div class="relative rounded-xl overflow-hidden glass-panel border-primary/30 p-1 group">
+                        <div class="relative h-[300px] w-full bg-slate-900/50 overflow-hidden rounded-lg">
+                            <pre class="p-6 text-xs font-mono text-slate-500 blur-sm select-none">
+<code>
+// ENCRYPTED_MODULE_V4.0
+import { initializeNeuralLink } from "@neon/core";
+
+const ACCESS_KEY = "SHA-512:********************";
+
+async function decryptRepository() {
+  const securityLayer = await verifyCredentials();
+  if (securityLayer.status === "LOCKED") {
+    throw new Error("Access Denied: Encrypted Block Detected");
+  }
+  // ... remaining 452 lines of proprietary code ...
+  // ... encrypted metadata follows ...
+  // ... system architecture hidden ...
+  return loadSecureModule();
+}
+
+// SECURITY_EXCEPTION: Payment_Protocol_Required
+// ERROR_CODE: 0x402_PAYMENT_REQUIRED
+</code>
+</pre>
+                            <div
+                                class="absolute inset-0 flex flex-col items-center justify-center bg-black/40 backdrop-blur-[2px]">
+                                <div
+                                    class="mb-6 inline-flex items-center gap-2 px-4 py-1.5 border border-primary bg-primary/20 rounded-full">
+                                    <span class="material-symbols-outlined text-primary text-sm">security</span>
+                                    <span
+                                        class="text-[10px] font-bold tracking-[0.3em] uppercase text-white">Encrypted_Access</span>
+                                </div>
+                                <div class="flex flex-col items-center gap-4">
+                                    <button
+                                        class="px-8 py-4 bg-primary text-white font-bold text-sm tracking-[0.2em] uppercase shadow-[0_0_25px_rgba(244,37,175,0.6)] hover:scale-105 transition-transform flex items-center gap-3 rounded">
+                                        <span class="material-symbols-outlined">key</span>
+                                        Unlock Source Code
+                                    </button>
+                                    <div class="flex flex-col items-center gap-1">
+                                        <span
+                                            class="text-xs font-mono text-accent-green font-bold tracking-widest">ACCESS_FEE:
+                                            $199</span>
+                                        <p class="text-[10px] text-slate-500 uppercase tracking-widest">Payment required
+                                            for full decryption and repository access.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute top-0 right-0 p-4">
+                            <div class="size-3 rounded-full bg-primary animate-pulse shadow-[0_0_10px_#f425af]"></div>
+                        </div>
+                    </div>
+                </section>
+                <section class="w-full max-w-7xl px-6 py-20">
+                    <div class="flex items-center gap-2 mb-10">
+                        <span class="material-symbols-outlined text-primary">reviews</span>
+                        <h3 class="text-xl font-bold uppercase tracking-widest italic">Client_Feedback</h3>
+                    </div>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div class="space-y-6">
+                            <div class="flex gap-1">
+                                <span class="material-symbols-outlined text-primary fill-1">star</span>
+                                <span class="material-symbols-outlined text-primary fill-1">star</span>
+                                <span class="material-symbols-outlined text-primary fill-1">star</span>
+                                <span class="material-symbols-outlined text-primary fill-1">star</span>
+                                <span class="material-symbols-outlined text-primary fill-1">star</span>
+                            </div>
+                            <blockquote class="text-2xl font-medium italic leading-snug">
+                                "The NEURAL_INTERFACE_X has completely redefined how our analysts interact with raw node
+                                data. The speed of the WebGL rendering is unprecedented in our sector."
+                            </blockquote>
+                            <div class="flex items-center gap-4">
+                                <div class="size-12 rounded-full border border-primary p-1">
+                                    <div class="w-full h-full rounded-full bg-cover bg-center"
+                                        data-alt="Client portrait"
+                                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBEt8t64WNqlCii82z9M4jx4Gy1BuKOGeIZfgc4PKBlEm7j6DH5Av6onUKSzdKklp0_7REspRWtWFKcJRp7mwW5tdONP0UG9lq7q9_pDmhiuvbQl7qqI5lqB_Z4B4m8hnvsFtB3r9eKpnH-uhSKFe3xyMxBiTsEdVgCDHYkc3iqI9G5n7-6Ey661_oxDvFCQ7HXV45uVcWcXNEkMvsGndgsNaf9PMfX3IIvzAQl6qpT4OMgrUN6hw_TmK5-wPYo4pjUcNujuAxuV-hF')">
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="font-bold uppercase tracking-widest text-primary">Marcus_Vane.exe</p>
+                                    <p class="text-xs text-slate-500 uppercase">CTO // Cyberdyne Systems</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative">
+                            <div class="aspect-video rounded-xl overflow-hidden glass-panel p-2">
+                                <div class="w-full h-full rounded-lg bg-cover bg-center grayscale contrast-125 opacity-50"
+                                    data-alt="Laboratory with high tech equipment"
+                                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCbdp_z8-wHnJ_w-lsvvZp5CFph0vnuUHYIwG1SuZ59I_7q35ILg-8lE_W67-k5VL8H8hTgTq1R1DWceXZXHVk-FbvLkoAYPbdgvOfzAyvdWu2JJXuZsNQ2OGG_DQYZp0oib6kbNPHQIbRwuu5BmYe5OSHX95lTJDChDF40-UZ2ocpecmS9Jq70FARn8Wt47lzzgqsrmmVwI1asLEiiYSBAJYaAN_BOQoVowO76sMjDtoFCE41sz36v6s_dVaxML8Rs3xiLocLnE_4Z')">
+                                </div>
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <button
+                                        class="size-20 rounded-full bg-primary/20 backdrop-blur-md border border-primary flex items-center justify-center group hover:bg-primary transition-all">
+                                        <span
+                                            class="material-symbols-outlined text-white text-4xl group-hover:scale-110 transition-transform">play_arrow</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div
+                                class="absolute -bottom-4 -right-4 p-4 glass-panel rounded-lg border-primary/40 hidden md:block">
+                                <p class="text-[10px] font-bold text-primary tracking-widest uppercase">
+                                    Video_Credential_ID: 99402-X</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="w-full max-w-7xl px-6 py-20 border-t border-primary/20">
+                    <div class="flex items-center justify-between mb-10">
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary">account_tree</span>
+                            <h3 class="text-xl font-bold uppercase tracking-widest italic">[ Related_Operations ]</h3>
+                        </div>
+                        <div class="flex gap-4">
+                            <button
+                                class="px-4 py-2 border border-primary/30 text-primary hover:bg-primary/10 transition-all font-mono text-xs tracking-widest">
+                                &lt; PREV
+                            </button>
+                            <button
+                                class="px-4 py-2 border border-primary/30 text-primary hover:bg-primary/10 transition-all font-mono text-xs tracking-widest">
+                                NEXT &gt;
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex gap-6 overflow-x-auto pb-8 scrollbar-hide">
+                        <!-- Card 1 -->
+                        <div
+                            class="min-w-[300px] flex-none glass-panel p-4 rounded-xl border-primary/20 group hover:border-primary/50 transition-all">
+                            <div class="aspect-video rounded-lg overflow-hidden mb-4 relative">
+                                <img alt="Project Alpha"
+                                    class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNDTnRaYwtMHlPHzs9TJlBbbr2_EH3fqEA1IokwcF9Q_XiXdLtQrl7XHgTC1pZTjUo_-64Xg3KRegPiCF-n6WQMTJd9mCG36TDFDc4ZU2CvojmuoXJFKsmGkEkKJ9-1k7U0oRSXs0MAAGYiiVyBX794u14GbD2tkT95u9bipgHbOr-APhG3cYbtRM2Aptkasfc6iN81m3RNLltLj89xFtCeoeVuIUyPaeghffr_W6jsAUJohuTWx17qO7L8c4jJKP_k1FjcW6YK-rD" />
+                                <div
+                                    class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity">
+                                </div>
+                            </div>
+                            <h4 class="text-sm font-bold uppercase tracking-widest text-white mb-4">CYBER_NET_V3</h4>
+                            <button
+                                class="w-full py-2 bg-transparent border border-accent-green/40 text-accent-green font-bold text-[10px] uppercase tracking-widest hover:bg-accent-green/10 transition-all">
+                                View_Data
+                            </button>
+                        </div>
+                        <!-- Card 2 -->
+                        <div
+                            class="min-w-[300px] flex-none glass-panel p-4 rounded-xl border-primary/20 group hover:border-primary/50 transition-all">
+                            <div class="aspect-video rounded-lg overflow-hidden mb-4 relative">
+                                <img alt="Project Beta"
+                                    class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCna8dQakiM4NeoWSaORey5QCaCwyCk9akrzFZX56-yf7yN4yGlYbvUcAe8imZYUFhk5VkcJY1pH-UmddMUCy2CkeFP37DbYUrtKscAom16uUpK8s5ZUuxkeb1adYjJ3b1IUae3MJYiaQQbv-s3wdsLSbvviYi1XB3w_NqCMTS11RlaX8kheJfbCeWyhJMZJ5JX74l0dZHeLvzkTyPG3DsgIJNY3PnzROofb_pTyAawzLaKULpmS43lnVW2nYJE7Cn0m00livycv--p" />
+                                <div
+                                    class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity">
+                                </div>
+                            </div>
+                            <h4 class="text-sm font-bold uppercase tracking-widest text-white mb-4">VOID_SHELL_CORE</h4>
+                            <button
+                                class="w-full py-2 bg-transparent border border-accent-green/40 text-accent-green font-bold text-[10px] uppercase tracking-widest hover:bg-accent-green/10 transition-all">
+                                View_Data
+                            </button>
+                        </div>
+                        <!-- Card 3 -->
+                        <div
+                            class="min-w-[300px] flex-none glass-panel p-4 rounded-xl border-primary/20 group hover:border-primary/50 transition-all">
+                            <div class="aspect-video rounded-lg overflow-hidden mb-4 relative">
+                                <img alt="Project Gamma"
+                                    class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPBhbfz_xYtWXKshFq5ESFKyy-ZGPHkFWdgG3lMQi3qFRJT2aUlUUgiqcmjcHFRgSfYvKegBOWkydTX06pS5PZxfaop2Dtp4p25Fr5omPDWcSCWnJxd5T7eixOkYesbWFUsAybcTb5v1mkZdxTfwusrDpcRkJng4yR0iJ5hdVEgUSkFCNabTxyK6kqcIeAywBCakD3bFMqygmDRH2sZ2U7HV_QiUWP7p1MLpoeHhCKWUGQv7aigFsCD82HwToi4yswJon_mYfsScdq" />
+                                <div
+                                    class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity">
+                                </div>
+                            </div>
+                            <h4 class="text-sm font-bold uppercase tracking-widest text-white mb-4">NEXUS_POINT_OS</h4>
+                            <button
+                                class="w-full py-2 bg-transparent border border-accent-green/40 text-accent-green font-bold text-[10px] uppercase tracking-widest hover:bg-accent-green/10 transition-all">
+                                View_Data
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                <footer class="w-full border-t border-primary/10 py-10 px-6 mt-20">
+                    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary">terminal</span>
+                            <span class="font-bold tracking-tighter uppercase">Neon_Agency // HQ_2024</span>
+                        </div>
+                        <div class="flex gap-8 text-[10px] font-bold text-slate-500 uppercase tracking-widest">
+                            <a class="hover:text-primary transition-colors" href="#">Twitter</a>
+                            <a class="hover:text-primary transition-colors" href="#">Github</a>
+                            <a class="hover:text-primary transition-colors" href="#">LinkedIn</a>
+                        </div>
+                        <div class="text-[10px] text-slate-500 uppercase tracking-widest">
+                            System_Status: <span class="text-accent-green">Online_</span>
+                        </div>
+                    </div>
+                </footer>
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>

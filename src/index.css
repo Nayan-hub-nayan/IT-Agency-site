@@ -132,6 +132,16 @@ h1, h2, h3, h4, .font-display {
     background: var(--primary);
     box-shadow: 0 0 10px var(--primary);
   }
+
+  .glass-panel {
+    background: rgba(255, 0, 122, 0.05);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 0, 122, 0.2);
+  }
+
+  .neon-glow {
+    box-shadow: 0 0 15px rgba(255, 0, 122, 0.4);
+  }
 }
 
 .animate-scanning {
