@@ -31,7 +31,14 @@ const Navbar = () => {
         {/* Logo/Status Section */}
         <div className="flex flex-col gap-1">
           <Link to="/home" className="text-accent text-xl font-bold tracking-tighter uppercase flex items-center gap-2">
-            <span className="material-symbols-outlined text-2xl">dataset</span>
+            <motion.svg
+              animate={{ rotate: 360 }}
+              transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+              className="text-primary text-2xl"
+              fill="none" height="40" viewBox="0 0 40 40" width="40" xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M20 0L24.5 15.5L40 20L24.5 24.5L20 40L15.5 24.5L0 20L15.5 15.5L20 0Z" fill="currentColor"></path>
+            </motion.svg>
             Lassgana
           </Link>
           <div className="font-mono text-[8px] opacity-40 tracking-widest uppercase hidden md:block">
