@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const testimonials = [
   {
-    quote: "Digital Door transformed our legacy platform into a high-speed revenue machine within weeks.",
+    quote: "Lassgana transformed our legacy platform into a high-speed revenue machine within weeks.",
     author: "Marcus V.",
     role: "CTO, Vertex AI",
     color: "primary"
@@ -35,7 +35,7 @@ const Testimonials = () => {
 
       <div className="flex gap-12 overflow-x-auto hide-scrollbar pb-12 cursor-grab active:cursor-grabbing px-4 max-w-[1400px] mx-auto">
         {testimonials.map((t, i) => (
-          <motion.div 
+          <motion.div
             key={i}
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
